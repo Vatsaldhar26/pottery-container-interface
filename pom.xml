@@ -58,4 +58,18 @@
     </dependencies>
   </dependencyManagement>
 
+  <distributionManagement>
+    <repository>
+      <id>dtg-code</id>
+      <name>RepositoryProxy</name>
+      <url>http://dtg-maven.cl.cam.ac.uk/content/repositories/releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>dtg-code</id>
+      <name>RepositoryProxy</name>
+      <url>http://dtg-maven.cl.cam.ac.uk/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+
 </project>
