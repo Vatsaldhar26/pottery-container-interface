@@ -4,8 +4,9 @@ public class CompilationResponse {
 	private boolean success;
 	private String failMessage;
 	private String response;
+	private long executionTimeMs;
 
-	public CompilationResponse(boolean success, String message) {
+	public CompilationResponse(boolean success, String message, long executionTimeMs) {
 		super();
 		this.success = success;
 		if (success) {
@@ -14,6 +15,7 @@ public class CompilationResponse {
 		else {
 			this.failMessage = message;
 		}
+		this.executionTimeMs = executionTimeMs;
 	}
 
 	public CompilationResponse() {
@@ -22,11 +24,22 @@ public class CompilationResponse {
 	
 	
 	
-	public CompilationResponse(boolean success, String failMessage, String response) {
+	public CompilationResponse(boolean success, String failMessage, String response, long executionTimeMs) {
 		super();
 		this.success = success;
 		this.failMessage = failMessage;
 		this.response = response;
+		this.executionTimeMs = executionTimeMs;
+	}
+
+	
+	
+	public long getExecutionTimeMs() {
+		return executionTimeMs;
+	}
+
+	public void setExecutionTimeMs(long executionTimeMs) {
+		this.executionTimeMs = executionTimeMs;
 	}
 
 	public boolean isSuccess() {
