@@ -2,6 +2,9 @@ package uk.ac.cam.cl.dtg.teaching.programmingtest.java.dto;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class HarnessResponse {
 
 	private boolean success;
@@ -9,15 +12,18 @@ public class HarnessResponse {
 	private String failMessage;
 	private long executionTimeMs;
 	
-	public HarnessResponse() {}
-	
 	public HarnessResponse(String failMessage, long executionTimeMs) {
 		this.success =false;
 		this.failMessage = failMessage;
 		this.executionTimeMs = executionTimeMs;
 	}
 	
-	public HarnessResponse(boolean success, List<HarnessStep> response, String failMessage, long executionTimeMs) {
+	@JsonCreator
+	public HarnessResponse(
+			@JsonProperty("success") boolean success, 
+			@JsonProperty("response") List<HarnessStep> response, 
+			@JsonProperty("failMessage") String failMessage, 
+			@JsonProperty("executionTimeMs") long executionTimeMs) {
 		super();
 		this.success = success;
 		this.response = response;

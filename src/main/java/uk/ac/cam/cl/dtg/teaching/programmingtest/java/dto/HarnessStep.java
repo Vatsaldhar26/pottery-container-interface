@@ -1,5 +1,8 @@
 package uk.ac.cam.cl.dtg.teaching.programmingtest.java.dto;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class HarnessStep {
 
 	public static final String TYPE_MESSAGE = "MESSAGE";
@@ -13,62 +16,46 @@ public class HarnessStep {
 	private Object actual;
 	private String id;
 	
-	public HarnessStep() {}	
 	
+	@JsonCreator
+	public HarnessStep(
+			@JsonProperty("type") String type, 
+			@JsonProperty("messsage") String message,
+			@JsonProperty("actual") Object actual, 
+			@JsonProperty("id") String id) {
+		super();
+		this.type = type;
+		this.message = message;
+		this.actual = actual;
+		this.id = id;
+	}
+
 	public static HarnessStep newMessage(String message) {
-		HarnessStep l = new HarnessStep();
-		l.message = message;
-		l.type = TYPE_MESSAGE;
-		return l;
+		return new HarnessStep(TYPE_MESSAGE,message,null,null);
 	}
 	
 	public static HarnessStep newMeasurement(String id, String message, Object actual) {
-		HarnessStep l = new HarnessStep();
-		l.id = id;
-		l.message = message;
-		l.actual = actual;
-		l.type = TYPE_MEASUREMENT;
-		return l;
+		return new HarnessStep(TYPE_MEASUREMENT,message,actual,id);
 	}
 	
 	public static HarnessStep newState(String message, Object actual) {
-		HarnessStep l = new HarnessStep();
-		l.message = message;
-		l.actual = actual;
-		l.type = TYPE_STATE;
-		return l;
+		return new HarnessStep(TYPE_STATE,message,actual,null);
 	}
 
 	public String getType() {
 		return type;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-	}
-
 	public String getMessage() {
 		return message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public Object getActual() {
 		return actual;
 	}
 
-	public void setActual(Object actual) {
-		this.actual = actual;
-	}
-
 	public String getId() {
 		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
 	}
 		
 }

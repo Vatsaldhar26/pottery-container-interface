@@ -1,55 +1,48 @@
 package uk.ac.cam.cl.dtg.teaching.programmingtest.java.dto;
 
+import java.util.Arrays;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class ValidationStep {
 	
 	private String criterion;
 	private String result;
 	private boolean acceptable;
-	private String[] references;
+	private List<String> references;
 	
-	public ValidationStep(String criterion, String result, boolean acceptable, String... references) {
+	public static ValidationStep newInstance(String criterion, String result, boolean acceptable, String... references) {
+		return new ValidationStep(criterion,result,acceptable,Arrays.asList(references));
+	}
+	
+	@JsonCreator
+	public ValidationStep(
+			@JsonProperty("criterion") String criterion, 
+			@JsonProperty("result") String result, 
+			@JsonProperty("acceptable") boolean acceptable, 
+			@JsonProperty("references") List<String> references) {
+		super();
 		this.criterion = criterion;
 		this.result = result;
 		this.acceptable = acceptable;
 		this.references = references;
-	}
-	
-	public ValidationStep() {
-		
 	}
 	
 	public boolean isAcceptable() {
 		return acceptable;
 	}
 
-	public void setAcceptable(boolean acceptable) {
-		this.acceptable = acceptable;
-	}
-
 	public String getCriterion() {
 		return criterion;
-	}
-
-	public void setCriterion(String criterion) {
-		this.criterion = criterion;
 	}
 
 	public String getResult() {
 		return result;
 	}
 
-	public void setResult(String result) {
-		this.result = result;
-	}
-
-	public String[] getReferences() {
+	public List<String> getReferences() {
 		return references;
-	}
-
-	public void setReferences(String[] references) {
-		this.references = references;
-	}
-	
-	
-	
+	}	
 }
