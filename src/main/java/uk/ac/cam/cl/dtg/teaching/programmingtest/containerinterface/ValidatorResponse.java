@@ -14,8 +14,6 @@ public class ValidatorResponse {
 	
 	private List<Interpretation> interpretations;
 	
-	private List<String> missingIds;
-	
 	private String message;
 
 	@JsonCreator
@@ -23,13 +21,11 @@ public class ValidatorResponse {
 			@JsonProperty("completed") boolean completed, 
 			@JsonProperty("overallInterpretation") String overallInterpretation, 
 			@JsonProperty("interpretations") List<Interpretation> interpretations,
-			@JsonProperty("missingIds")	List<String> missingIds,
 			@JsonProperty("message") String message) {
 		super();
 		this.completed = completed;
 		this.overallInterpretation = overallInterpretation;
 		this.interpretations = interpretations;
-		this.missingIds = missingIds;
 		this.message = message;
 	}
 
@@ -39,7 +35,6 @@ public class ValidatorResponse {
 		this.completed = false;
 		this.overallInterpretation = Interpretation.INTERPRETED_BAD;
 		this.interpretations = new LinkedList<>();
-		this.missingIds = new LinkedList<>();
 		this.message = string;
 	}
 	
@@ -55,16 +50,10 @@ public class ValidatorResponse {
 		return interpretations;
 	}
 
-	public List<String> getMissingIds() {
-		return missingIds;
-	}
-
 	public String getMessage() {
 		return message;
 	}
 
-	
-	
 	public void setMessage(String message) {
 		this.message = message;
 	}

@@ -9,6 +9,8 @@ public class HarnessResponse {
 	
 	private boolean completed;
 	
+	private String message;
+	
 	public HarnessResponse(LinkedList<HarnessPart> testParts, boolean completed) {
 		super();
 		this.testParts = testParts;
@@ -23,6 +25,7 @@ public class HarnessResponse {
 	public HarnessResponse(String string) {
 		this.testParts = new LinkedList<>();
 		this.completed = false;
+		this.message = string;
 	}
 
 	public List<HarnessPart> getTestParts() {
@@ -40,4 +43,8 @@ public class HarnessResponse {
 	public void addHarnessPart(HarnessPart p) {
 		this.testParts.add(p);
 	}	
+	
+	public String getMessage() { 
+		return message;
+	}
 }
