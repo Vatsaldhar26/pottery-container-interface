@@ -47,7 +47,9 @@ public class ValidatorResponse {
 		this.message = message;
 	}
 
-	public ValidatorResponse() {}
+	public ValidatorResponse() {
+		this.interpretations = new LinkedList<>();		
+	}
 	
 	public ValidatorResponse(String string) {
 		this.completed = false;

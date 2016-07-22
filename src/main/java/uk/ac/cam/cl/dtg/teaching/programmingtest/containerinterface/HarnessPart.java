@@ -69,8 +69,11 @@ public class HarnessPart {
 			@JsonProperty("errorDetail") String errorDetail
 			) {
 		super();
+		this.testSummary = testSummary;
 		this.testSteps = testSteps;
 		this.measurements = measurements;
+		this.errorSummary = errorSummary;
+		this.errorDetail = errorDetail;
 	}
 	
 	public HarnessPart() {
