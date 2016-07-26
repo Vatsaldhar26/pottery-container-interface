@@ -32,19 +32,19 @@ public class ValidatorResponse {
 	
 	private List<Interpretation> interpretations;
 	
-	private String message;
+	private String errorMessage;
 
 	@JsonCreator
 	public ValidatorResponse(
 			@JsonProperty("completed") boolean completed, 
 			@JsonProperty("overallInterpretation") String overallInterpretation, 
 			@JsonProperty("interpretations") List<Interpretation> interpretations,
-			@JsonProperty("message") String message) {
+			@JsonProperty("errorMessage") String errorMessage) {
 		super();
 		this.completed = completed;
 		this.overallInterpretation = overallInterpretation;
 		this.interpretations = interpretations;
-		this.message = message;
+		this.errorMessage = errorMessage;
 	}
 
 	public ValidatorResponse() {
@@ -55,7 +55,7 @@ public class ValidatorResponse {
 		this.completed = false;
 		this.overallInterpretation = Interpretation.INTERPRETED_BAD;
 		this.interpretations = new LinkedList<>();
-		this.message = string;
+		this.errorMessage = string;
 	}
 	
 	public boolean isCompleted() {
@@ -70,12 +70,12 @@ public class ValidatorResponse {
 		return interpretations;
 	}
 
-	public String getMessage() {
-		return message;
+	public String getErrorMessage() {
+		return errorMessage;
 	}
 
 	public void setMessage(String message) {
-		this.message = message;
+		this.errorMessage = message;
 	}
 
 	public void setCompleted(boolean b) {
