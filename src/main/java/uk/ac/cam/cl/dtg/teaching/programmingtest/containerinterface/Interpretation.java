@@ -23,9 +23,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Interpretation {
 
-	public static final String INTERPRETED_EXCELLENT="EXCELLENT";
+	public static final String INTERPRETED_PASSED="PASSED";
 	public static final String INTERPRETED_ACCEPTABLE="ACCEPTABLE";
-	public static final String INTERPRETED_BAD="BAD";
+	public static final String INTERPRETED_FAILED="FAILED";
 
 	private String id;
 	

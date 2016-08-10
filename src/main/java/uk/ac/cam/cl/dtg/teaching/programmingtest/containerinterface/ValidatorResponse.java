@@ -53,7 +53,7 @@ public class ValidatorResponse {
 	
 	public ValidatorResponse(String string) {
 		this.completed = false;
-		this.overallInterpretation = Interpretation.INTERPRETED_BAD;
+		this.overallInterpretation = Interpretation.INTERPRETED_FAILED;
 		this.interpretations = new LinkedList<>();
 		this.errorMessage = string;
 	}
