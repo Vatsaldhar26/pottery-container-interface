@@ -77,4 +77,20 @@ public class ValidatorResponse {
   public void setCompleted(boolean b) {
     this.completed = b;
   }
+
+  @Override
+  public String toString() {
+    return "ValidatorResponse{"
+        + "completed="
+        + completed
+        + ", overallInterpretation='"
+        + overallInterpretation
+        + '\''
+        + ", interpretations="
+        + interpretations
+        + ", errorMessage='"
+        + errorMessage
+        + '\''
+        + '}';
+  }
 }

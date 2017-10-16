@@ -52,4 +52,19 @@ public class Interpretation {
   public String getExplanation() {
     return explanation;
   }
+
+  @Override
+  public String toString() {
+    return "Interpretation{"
+        + "id='"
+        + id
+        + '\''
+        + ", result='"
+        + result
+        + '\''
+        + ", explanation='"
+        + explanation
+        + '\''
+        + '}';
+  }
 }
