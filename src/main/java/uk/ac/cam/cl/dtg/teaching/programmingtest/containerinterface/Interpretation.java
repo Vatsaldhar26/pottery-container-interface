@@ -1,6 +1,5 @@
-/**
- * pottery-container-interface - Within-container API for testing programming
-							exercises
+/*
+ * pottery-container-interface - Within-container API for testing programming exercises
  * Copyright © 2015 Andrew Rice (acr31@cam.ac.uk)
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,6 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 package uk.ac.cam.cl.dtg.teaching.programmingtest.containerinterface;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -33,6 +33,7 @@ public class Interpretation {
 
   private String explanation;
 
+  /** Create an instance from the fields provided. */
   @JsonCreator
   public Interpretation(
       @JsonProperty("id") String id,

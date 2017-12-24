@@ -1,6 +1,5 @@
-/**
- * pottery-container-interface - Within-container API for testing programming
-							exercises
+/*
+ * pottery-container-interface - Within-container API for testing programming exercises
  * Copyright © 2015 Andrew Rice (acr31@cam.ac.uk)
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,6 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 package uk.ac.cam.cl.dtg.teaching.programmingtest.containerinterface;
 
 import java.util.LinkedList;
@@ -29,17 +29,23 @@ public class HarnessResponse {
 
   private String errorMessage;
 
+  /** Create a new instance from the fields provided. */
   public HarnessResponse(LinkedList<HarnessPart> testParts, boolean completed) {
     super();
     this.testParts = testParts;
     this.completed = completed;
   }
 
+  /** Create an instance marked incomplete with an empty list of test parts. */
   public HarnessResponse() {
     this.testParts = new LinkedList<>();
     this.completed = false;
   }
 
+  /**
+   * Create an instance marked incomplete with an empty list of test parts and the given error
+   * message.
+   */
   public HarnessResponse(String errorMessage) {
     this.testParts = new LinkedList<>();
     this.completed = false;

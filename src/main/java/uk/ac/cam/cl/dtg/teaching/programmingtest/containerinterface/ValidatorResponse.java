@@ -1,6 +1,5 @@
-/**
- * pottery-container-interface - Within-container API for testing programming
-							exercises
+/*
+ * pottery-container-interface - Within-container API for testing programming exercises
  * Copyright © 2015 Andrew Rice (acr31@cam.ac.uk)
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,6 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 package uk.ac.cam.cl.dtg.teaching.programmingtest.containerinterface;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -33,6 +33,7 @@ public class ValidatorResponse {
 
   private String errorMessage;
 
+  /** Create an instance from the fields provided. */
   @JsonCreator
   public ValidatorResponse(
       @JsonProperty("completed") boolean completed,
@@ -46,15 +47,17 @@ public class ValidatorResponse {
     this.errorMessage = errorMessage;
   }
 
+  /** Create an instance with an empty list of interpretations. */
   public ValidatorResponse() {
     this.interpretations = new LinkedList<>();
   }
 
-  public ValidatorResponse(String string) {
+  /** Create an instance which is marked as failed using the given error message. */
+  public ValidatorResponse(String errorMessage) {
     this.completed = false;
     this.overallInterpretation = Interpretation.INTERPRETED_FAILED;
     this.interpretations = new LinkedList<>();
-    this.errorMessage = string;
+    this.errorMessage = errorMessage;
   }
 
   public boolean isCompleted() {

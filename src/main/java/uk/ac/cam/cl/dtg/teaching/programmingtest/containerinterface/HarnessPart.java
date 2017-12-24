@@ -1,6 +1,5 @@
-/**
- * pottery-container-interface - Within-container API for testing programming
-							exercises
+/*
+ * pottery-container-interface - Within-container API for testing programming exercises
  * Copyright © 2015 Andrew Rice (acr31@cam.ac.uk)
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,6 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 package uk.ac.cam.cl.dtg.teaching.programmingtest.containerinterface;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -53,19 +53,16 @@ public class HarnessPart {
 
   private List<Measurement> measurements;
 
-  /** If non-null then an error occurred and this is a short summary */
+  /** If non-null then an error occurred and this is a short summary. */
   private String errorSummary;
 
   /**
    * If non-null then an error occurred and this is a detailed breakdown of the error. Use &lt;code>
-   * tags to delimit code, and
-   *
-   * <ul>
-   *   ,
-   *   <li>for listing elements (e.g. stack trace)
+   * tags to delimit code, and &lt;ul> , &lt;li>for listing elements (e.g. stack trace)
    */
   private String errorDetail;
 
+  /** Creates a new instance from the provided field values. */
   @JsonCreator
   public HarnessPart(
       @JsonProperty("testSummary") String testSummary,
@@ -81,6 +78,7 @@ public class HarnessPart {
     this.errorDetail = errorDetail;
   }
 
+  /** Creates a new instance with empty lists of testSteps and measurements. */
   public HarnessPart() {
     super();
     this.testSteps = new LinkedList<>();
