@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Measurement {
 
+  /** Placeholder string used to indicate that the measurement has not been made. */
+  public static final String UNAVILABLE = "UNAVAILABLE";
+
   private String criterion;
   private String measurement;
 
