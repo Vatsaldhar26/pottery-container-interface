@@ -124,4 +124,23 @@ public class HarnessPart {
   public void setErrorDetail(String errorDetail) {
     this.errorDetail = errorDetail;
   }
+
+  @Override
+  public String toString() {
+    return "HarnessPart{"
+        + "testSteps="
+        + testSteps
+        + ", testSummary='"
+        + testSummary
+        + '\''
+        + ", measurements="
+        + measurements
+        + ", errorSummary='"
+        + errorSummary
+        + '\''
+        + ", errorDetail='"
+        + errorDetail
+        + '\''
+        + '}';
+  }
 }

@@ -52,4 +52,19 @@ public class Measurement {
   public String getId() {
     return id;
   }
+
+  @Override
+  public String toString() {
+    return "Measurement{"
+        + "criterion='"
+        + criterion
+        + '\''
+        + ", measurement='"
+        + measurement
+        + '\''
+        + ", id='"
+        + id
+        + '\''
+        + '}';
+  }
 }

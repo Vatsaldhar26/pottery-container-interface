@@ -71,4 +71,17 @@ public class HarnessResponse {
   public String getErrorMessage() {
     return errorMessage;
   }
+
+  @Override
+  public String toString() {
+    return "HarnessResponse{"
+        + "testParts="
+        + testParts
+        + ", completed="
+        + completed
+        + ", errorMessage='"
+        + errorMessage
+        + '\''
+        + '}';
+  }
 }
