@@ -3,7 +3,7 @@
     <groupId>uk.ac.cam.cl.dtg.teaching</groupId>
     <artifactId>pottery-container-interface</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.7-SNAPSHOT</version>
+    <version>1.0.7</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -11,7 +11,8 @@
 
     <scm>
         <developerConnection>scm:git:ssh://git@github.com/ucam-cl-dtg/pottery-container-interface.git</developerConnection>
-    </scm>
+      <tag>pottery-container-interface-1.0.7</tag>
+  </scm>
 
     <dependencies>
         <dependency>
